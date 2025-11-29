@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { LogOut, Settings, User, Users, Building, Book } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { ModeToggle } from "@/components/ModeToggle";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -64,7 +65,12 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           </Button>
         </div>
       </aside>
-      <main className="flex-1 p-8">{children}</main>
+      <main className="flex-1">
+        <div className="flex justify-end p-4">
+            <ModeToggle />
+        </div>
+        <div className="p-8">{children}</div>
+        </main>
     </div>
   );
 };
