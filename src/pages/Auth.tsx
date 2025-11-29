@@ -35,6 +35,7 @@ const Auth = () => {
       });
       navigate("/dashboard");
     } catch (error: any) {
+      console.error("Sign-in error:", error);
       toast({
         variant: "destructive",
         title: "Error signing in",
@@ -107,8 +108,7 @@ const Auth = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="signin-password">Password</Label>
-                  <Input
+                  <Label htmlFor="signin-password">Password</Label>                  <Input
                     id="signin-password"
                     type="password"
                     value={password}
@@ -177,7 +177,7 @@ const Auth = () => {
               </form>
             </TabsContent>
           </Tabs>
-        </Card>
+        </Card>.
       </div>
     </div>
   );
